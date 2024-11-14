@@ -1,9 +1,7 @@
 package com.emp.crud.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.emp.crud.util.EncryptionConverter;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +19,6 @@ public class Employee {
     private String employeeId;  //Will generate a random id instead of auto generating
     private String name;
     private String email;
-    private Long contactNo;
+    @Convert(converter = EncryptionConverter.class)
+    private String contactNo;
 }

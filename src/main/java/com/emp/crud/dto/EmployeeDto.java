@@ -11,5 +11,5 @@ public class EmployeeDto {
     private String employeeId;
     private String name;
     private String email;
-    private Long contactNo;
+    private String contactNo;
 }
