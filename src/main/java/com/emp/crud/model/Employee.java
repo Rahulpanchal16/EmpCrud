@@ -18,7 +18,10 @@ public class Employee {
     @Column(name = "emp_id")
     private String employeeId;  //Will generate a random id instead of auto generating
     private String name;
+    @Convert(converter = EncryptionConverter.class)
     private String email;
     @Convert(converter = EncryptionConverter.class)
     private String contactNo;
+    @Convert(converter = EncryptionConverter.class)
+    private String password;
 }

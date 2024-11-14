@@ -3,6 +3,7 @@ package com.emp.crud.controller;
 import com.emp.crud.dto.EmployeeDto;
 import com.emp.crud.service.EmployeeService;
 import com.emp.crud.util.ApiResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping(path = "/create")
-    public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> createEmployee(@Valid @RequestBody EmployeeDto employeeDto) {
         EmployeeDto createdEmployee = this.employeeService.createEmployee(employeeDto);
         return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
     }
