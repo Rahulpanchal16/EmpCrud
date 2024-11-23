@@ -19,7 +19,6 @@ public class SecurityConfig {
                 .anyRequest().authenticated() // All other requests require authentication
                 .and()
                 .httpBasic(Customizer.withDefaults()); // Enables basic authentication for testing
-
         return http.build();
     }
 }
